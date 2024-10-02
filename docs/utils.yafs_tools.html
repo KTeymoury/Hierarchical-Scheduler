@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module utils.yafs_tools</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="utils.html"><font color="#ffffff">utils</font></a>.yafs_tools</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cutils%5Cyafs_tools.py">e:\projects\hadian\hopefully_final\yafs_playground\utils\yafs_tools.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_random_placement"><strong>create_random_placement</strong></a>(dags: networkx.classes.digraph.DiGraph, network: networkx.classes.graph.Graph, number_of_instances=1, seed=None) -&gt; utils.placements.MappedPlacement</dt><dd><tt>Generate&nbsp;a&nbsp;random&nbsp;YAFS&nbsp;Placement&nbsp;for&nbsp;testing&nbsp;purposes.<br>
+&nbsp;<br>
+Note:&nbsp;This&nbsp;function&nbsp;is&nbsp;mostly&nbsp;deprecated&nbsp;and&nbsp;only&nbsp;kept&nbsp;here&nbsp;for&nbsp;future&nbsp;reference.</tt></dd></dl>
+ <dl><dt><a name="-create_random_population"><strong>create_random_population</strong></a>(dags: networkx.classes.digraph.DiGraph, network: networkx.classes.graph.Graph, number_of_messages=1, seed=None, interval=1000) -&gt; utils.populations.MappedPopulation</dt><dd><tt>Generate&nbsp;a&nbsp;random&nbsp;YAFS&nbsp;Population&nbsp;for&nbsp;testing&nbsp;purposes.<br>
+&nbsp;<br>
+Note:&nbsp;This&nbsp;function&nbsp;is&nbsp;mostly&nbsp;deprecated&nbsp;and&nbsp;only&nbsp;kept&nbsp;here&nbsp;for&nbsp;future&nbsp;reference.</tt></dd></dl>
+ <dl><dt><a name="-create_yafs_simulation"><strong>create_yafs_simulation</strong></a>(topology: yafs.topology.Topology, apps: list[yafs.application.Application], placement: utils.placements.MappedPlacement, population: utils.populations.MappedPopulation, path_selector: yafs.selection.Selection, leaker=None)</dt><dd><tt>Creates&nbsp;a&nbsp;YAFS&nbsp;Simulation&nbsp;for&nbsp;testing&nbsp;purposes.<br>
+&nbsp;<br>
+Important&nbsp;Note:&nbsp;This&nbsp;function&nbsp;is&nbsp;deprecated&nbsp;and&nbsp;should&nbsp;NOT&nbsp;be&nbsp;used,&nbsp;it&nbsp;is&nbsp;kept&nbsp;here&nbsp;for&nbsp;future&nbsp;reference.</tt></dd></dl>
+ <dl><dt><a name="-dag_to_yafs_application"><strong>dag_to_yafs_application</strong></a>(dag: networkx.classes.digraph.DiGraph) -&gt; yafs.application.Application</dt><dd><tt>Creates&nbsp;YAFS&nbsp;Application&nbsp;objects&nbsp;based&nbsp;on&nbsp;networkx&nbsp;DAGs.</tt></dd></dl>
+ <dl><dt><a name="-network_to_yafs_topology"><strong>network_to_yafs_topology</strong></a>(graph: networkx.classes.graph.Graph) -&gt; yafs.topology.Topology</dt><dd><tt>Creates&nbsp;a&nbsp;YAFS&nbsp;Topology&nbsp;using&nbsp;a&nbsp;networkx&nbsp;network&nbsp;graph.</tt></dd></dl>
+</td></tr></table>
+</body></html>

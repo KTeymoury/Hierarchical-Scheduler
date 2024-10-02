@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module utils.graph_generators</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="utils.html"><font color="#ffffff">utils</font></a>.graph_generators</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cutils%5Cgraph_generators.py">e:\projects\hadian\hopefully_final\yafs_playground\utils\graph_generators.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="utils.graph_tools.html">utils.graph_tools</a><br>
+</td><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_app_batch"><strong>create_app_batch</strong></a>(app_count=5, service_count_range: tuple[int, int] = (12, 20), seed=None) -&gt; list[networkx.classes.digraph.DiGraph]</dt><dd><tt>Creates&nbsp;a&nbsp;list&nbsp;of&nbsp;Scenario&nbsp;compatible&nbsp;apps.</tt></dd></dl>
+ <dl><dt><a name="-create_huge_network"><strong>create_huge_network</strong></a>(community_count=15, community_node_count: tuple[int, int] = (20, 30), has_cloud=True, seed=None) -&gt; networkx.classes.graph.Graph</dt><dd><tt>Creates&nbsp;a&nbsp;huge&nbsp;network&nbsp;of&nbsp;physical&nbsp;nodes&nbsp;with&nbsp;a&nbsp;number&nbsp;of&nbsp;cloudlets&nbsp;distributed&nbsp;evenly&nbsp;among&nbsp;communities.&nbsp;A&nbsp;huge&nbsp;setup&nbsp;consists<br>
+of&nbsp;13&nbsp;or&nbsp;more&nbsp;communities&nbsp;and&nbsp;number&nbsp;of&nbsp;cloudlets&nbsp;are&nbsp;dynamically&nbsp;determined&nbsp;by&nbsp;community&nbsp;count&nbsp;(one&nbsp;for&nbsp;every&nbsp;12&nbsp;community).</tt></dd></dl>
+ <dl><dt><a name="-create_tiny_network"><strong>create_tiny_network</strong></a>(community_count=5, community_node_count: tuple[int, int] = (5, 10), has_cloud=True, seed=None) -&gt; networkx.classes.graph.Graph</dt><dd><tt>Creates&nbsp;a&nbsp;tiny&nbsp;network&nbsp;with&nbsp;a&nbsp;single&nbsp;cloud&nbsp;component.&nbsp;Given&nbsp;the&nbsp;tiny&nbsp;status&nbsp;it&nbsp;can&nbsp;hold&nbsp;up&nbsp;to&nbsp;12&nbsp;community&nbsp;of&nbsp;nodes.<br>
+Community&nbsp;in&nbsp;this&nbsp;function&nbsp;means&nbsp;a&nbsp;set&nbsp;of&nbsp;closely&nbsp;knitted&nbsp;nodes&nbsp;and&nbsp;is&nbsp;not&nbsp;necessarily&nbsp;an&nbsp;actual&nbsp;community&nbsp;detectable<br>
+by&nbsp;graph&nbsp;partitioning&nbsp;algorithm&nbsp;used.</tt></dd></dl>
+</td></tr></table>
+</body></html>

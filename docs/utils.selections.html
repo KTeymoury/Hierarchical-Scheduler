@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module selections</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>selections</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cutils%5Cselections.py">e:\projects\hadian\hopefully_final\yafs_playground\utils\selections.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="yafs.selection.html#Selection">yafs.selection.Selection</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="selections.html#CachedSelector">CachedSelector</a>
+</font></dt><dt><font face="helvetica, arial"><a href="selections.html#ClosestFirstPartitionedSelector">ClosestFirstPartitionedSelector</a>
+</font></dt><dt><font face="helvetica, arial"><a href="selections.html#CongestionAwarePartitionedSelector">CongestionAwarePartitionedSelector</a>
+</font></dt><dt><font face="helvetica, arial"><a href="selections.html#PartitionedSelector">PartitionedSelector</a>
+</font></dt><dt><font face="helvetica, arial"><a href="selections.html#RoundRobinPartitionedSelector">RoundRobinPartitionedSelector</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CachedSelector">class <strong>CachedSelector</strong></a>(<a href="yafs.selection.html#Selection">yafs.selection.Selection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CachedSelector">CachedSelector</a>(path_cache={},&nbsp;logger=None)<br>
+&nbsp;<br>
+A&nbsp;simple&nbsp;selector&nbsp;class&nbsp;that&nbsp;uses&nbsp;a&nbsp;path&nbsp;lookup&nbsp;cache&nbsp;to&nbsp;speed&nbsp;up&nbsp;simulation.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="selections.html#CachedSelector">CachedSelector</a></dd>
+<dd><a href="yafs.selection.html#Selection">yafs.selection.Selection</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CachedSelector-__init__"><strong>__init__</strong></a>(self, path_cache={}, logger=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="CachedSelector-get_path"><strong>get_path</strong></a>(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic, from_des)</dt><dd><tt>Returns&nbsp;the&nbsp;Simpy&nbsp;ID&nbsp;of&nbsp;first&nbsp;instance&nbsp;of&nbsp;target&nbsp;module&nbsp;along&nbsp;with&nbsp;the&nbsp;topological&nbsp;path&nbsp;to&nbsp;the&nbsp;network&nbsp;node<br>
+on&nbsp;which&nbsp;that&nbsp;module&nbsp;is&nbsp;placed.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><a name="CachedSelector-get_path_from_failure"><strong>get_path_from_failure</strong></a>(self, sim, message, link, alloc_DES, alloc_module, traffic, ctime, from_des)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;call&nbsp;when&nbsp;some&nbsp;link&nbsp;of&nbsp;a&nbsp;message&nbsp;path&nbsp;is&nbsp;broken&nbsp;or&nbsp;unavailable.&nbsp;A&nbsp;new&nbsp;one&nbsp;from&nbsp;that&nbsp;point&nbsp;should&nbsp;be&nbsp;calculated.<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;this&nbsp;function&nbsp;is&nbsp;optional</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClosestFirstPartitionedSelector">class <strong>ClosestFirstPartitionedSelector</strong></a>(<a href="yafs.selection.html#Selection">yafs.selection.Selection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ClosestFirstPartitionedSelector">ClosestFirstPartitionedSelector</a>(gateways,&nbsp;partition_info,&nbsp;path_cache={},&nbsp;logger=None)<br>
+&nbsp;<br>
+A&nbsp;simple&nbsp;selector&nbsp;that&nbsp;routes&nbsp;requests&nbsp;to&nbsp;closest&nbsp;partition&nbsp;with&nbsp;an&nbsp;instance&nbsp;of&nbsp;that&nbsp;app<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="selections.html#ClosestFirstPartitionedSelector">ClosestFirstPartitionedSelector</a></dd>
+<dd><a href="yafs.selection.html#Selection">yafs.selection.Selection</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ClosestFirstPartitionedSelector-__init__"><strong>__init__</strong></a>(self, gateways, partition_info, path_cache={}, logger=None)</dt><dd><tt>This&nbsp;selector&nbsp;needs&nbsp;to&nbsp;know&nbsp;the&nbsp;name&nbsp;of&nbsp;gateway&nbsp;devices&nbsp;and&nbsp;general&nbsp;information&nbsp;about&nbsp;partitions&nbsp;in&nbsp;order<br>
+to&nbsp;operate&nbsp;properly.&nbsp;You&nbsp;can&nbsp;find&nbsp;a&nbsp;usage&nbsp;example&nbsp;inside&nbsp;'Scenario.py'.</tt></dd></dl>
+
+<dl><dt><a name="ClosestFirstPartitionedSelector-get_path"><strong>get_path</strong></a>(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic, from_des)</dt><dd><tt>Returns&nbsp;the&nbsp;Simpy&nbsp;ID&nbsp;of&nbsp;first&nbsp;instance&nbsp;of&nbsp;target&nbsp;module&nbsp;along&nbsp;with&nbsp;the&nbsp;topological&nbsp;path&nbsp;to&nbsp;the&nbsp;network&nbsp;node<br>
+on&nbsp;which&nbsp;that&nbsp;module&nbsp;is&nbsp;placed.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><a name="ClosestFirstPartitionedSelector-get_path_from_failure"><strong>get_path_from_failure</strong></a>(self, sim, message, link, alloc_DES, alloc_module, traffic, ctime, from_des)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;call&nbsp;when&nbsp;some&nbsp;link&nbsp;of&nbsp;a&nbsp;message&nbsp;path&nbsp;is&nbsp;broken&nbsp;or&nbsp;unavailable.&nbsp;A&nbsp;new&nbsp;one&nbsp;from&nbsp;that&nbsp;point&nbsp;should&nbsp;be&nbsp;calculated.<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;this&nbsp;function&nbsp;is&nbsp;optional</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CongestionAwarePartitionedSelector">class <strong>CongestionAwarePartitionedSelector</strong></a>(<a href="yafs.selection.html#Selection">yafs.selection.Selection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CongestionAwarePartitionedSelector">CongestionAwarePartitionedSelector</a>(logger=None)<br>
+&nbsp;<br>
+#&nbsp;TODO:&nbsp;Make&nbsp;this&nbsp;happen&nbsp;T_T<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="selections.html#CongestionAwarePartitionedSelector">CongestionAwarePartitionedSelector</a></dd>
+<dd><a href="yafs.selection.html#Selection">yafs.selection.Selection</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><a name="CongestionAwarePartitionedSelector-__init__"><strong>__init__</strong></a>(self, logger=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="CongestionAwarePartitionedSelector-get_path"><strong>get_path</strong></a>(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic, from_des)</dt><dd><tt>Args:<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;path&nbsp;among&nbsp;nodes<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;an&nbsp;identifier&nbsp;of&nbsp;the&nbsp;module<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;override&nbsp;required</tt></dd></dl>
+
+<dl><dt><a name="CongestionAwarePartitionedSelector-get_path_from_failure"><strong>get_path_from_failure</strong></a>(self, sim, message, link, alloc_DES, alloc_module, traffic, ctime, from_des)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;call&nbsp;when&nbsp;some&nbsp;link&nbsp;of&nbsp;a&nbsp;message&nbsp;path&nbsp;is&nbsp;broken&nbsp;or&nbsp;unavailable.&nbsp;A&nbsp;new&nbsp;one&nbsp;from&nbsp;that&nbsp;point&nbsp;should&nbsp;be&nbsp;calculated.<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;this&nbsp;function&nbsp;is&nbsp;optional</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PartitionedSelector">class <strong>PartitionedSelector</strong></a>(<a href="yafs.selection.html#Selection">yafs.selection.Selection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#PartitionedSelector">PartitionedSelector</a>(gateways,&nbsp;partition_info,&nbsp;path_cache={},&nbsp;logger=None)<br>
+&nbsp;<br>
+Nothing&nbsp;fancy...&nbsp;just&nbsp;a&nbsp;selector&nbsp;optimized&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;partitioned&nbsp;networks.&nbsp;Basically&nbsp;just&nbsp;a&nbsp;performant&nbsp;version&nbsp;of<br>
+cached&nbsp;selector.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="selections.html#PartitionedSelector">PartitionedSelector</a></dd>
+<dd><a href="yafs.selection.html#Selection">yafs.selection.Selection</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PartitionedSelector-__init__"><strong>__init__</strong></a>(self, gateways, partition_info, path_cache={}, logger=None)</dt><dd><tt>This&nbsp;selector&nbsp;needs&nbsp;to&nbsp;know&nbsp;the&nbsp;name&nbsp;of&nbsp;gateway&nbsp;devices&nbsp;and&nbsp;general&nbsp;information&nbsp;about&nbsp;partitions&nbsp;in&nbsp;order<br>
+to&nbsp;operate&nbsp;properly.&nbsp;You&nbsp;can&nbsp;find&nbsp;a&nbsp;usage&nbsp;example&nbsp;inside&nbsp;'Scenario.py'.</tt></dd></dl>
+
+<dl><dt><a name="PartitionedSelector-get_path"><strong>get_path</strong></a>(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic, from_des)</dt><dd><tt>Returns&nbsp;the&nbsp;Simpy&nbsp;ID&nbsp;of&nbsp;first&nbsp;instance&nbsp;of&nbsp;target&nbsp;module&nbsp;along&nbsp;with&nbsp;the&nbsp;topological&nbsp;path&nbsp;to&nbsp;the&nbsp;network&nbsp;node<br>
+on&nbsp;which&nbsp;that&nbsp;module&nbsp;is&nbsp;placed.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><a name="PartitionedSelector-get_path_from_failure"><strong>get_path_from_failure</strong></a>(self, sim, message, link, alloc_DES, alloc_module, traffic, ctime, from_des)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;call&nbsp;when&nbsp;some&nbsp;link&nbsp;of&nbsp;a&nbsp;message&nbsp;path&nbsp;is&nbsp;broken&nbsp;or&nbsp;unavailable.&nbsp;A&nbsp;new&nbsp;one&nbsp;from&nbsp;that&nbsp;point&nbsp;should&nbsp;be&nbsp;calculated.<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;this&nbsp;function&nbsp;is&nbsp;optional</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RoundRobinPartitionedSelector">class <strong>RoundRobinPartitionedSelector</strong></a>(<a href="yafs.selection.html#Selection">yafs.selection.Selection</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RoundRobinPartitionedSelector">RoundRobinPartitionedSelector</a>(gateways,&nbsp;partition_info,&nbsp;path_cache={},&nbsp;logger=None)<br>
+&nbsp;<br>
+A&nbsp;simple&nbsp;round&nbsp;robin&nbsp;selection&nbsp;class&nbsp;that&nbsp;routes&nbsp;requests&nbsp;to&nbsp;partitions&nbsp;using&nbsp;round&nbsp;robin&nbsp;technique.<br>
+As&nbsp;a&nbsp;selector&nbsp;this&nbsp;is&nbsp;nt&nbsp;very&nbsp;useful&nbsp;but&nbsp;it's&nbsp;going&nbsp;to&nbsp;be&nbsp;the&nbsp;foundation&nbsp;of&nbsp;congestion-aware&nbsp;one&nbsp;soon:TM:.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="selections.html#RoundRobinPartitionedSelector">RoundRobinPartitionedSelector</a></dd>
+<dd><a href="yafs.selection.html#Selection">yafs.selection.Selection</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RoundRobinPartitionedSelector-__init__"><strong>__init__</strong></a>(self, gateways, partition_info, path_cache={}, logger=None)</dt><dd><tt>This&nbsp;selector&nbsp;needs&nbsp;to&nbsp;know&nbsp;the&nbsp;name&nbsp;of&nbsp;gateway&nbsp;devices&nbsp;and&nbsp;general&nbsp;information&nbsp;about&nbsp;partitions&nbsp;in&nbsp;order<br>
+to&nbsp;operate&nbsp;properly.&nbsp;You&nbsp;can&nbsp;find&nbsp;a&nbsp;usage&nbsp;example&nbsp;inside&nbsp;'Scenario.py'.</tt></dd></dl>
+
+<dl><dt><a name="RoundRobinPartitionedSelector-get_path"><strong>get_path</strong></a>(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic, from_des)</dt><dd><tt>Returns&nbsp;the&nbsp;Simpy&nbsp;ID&nbsp;of&nbsp;first&nbsp;instance&nbsp;of&nbsp;target&nbsp;module&nbsp;along&nbsp;with&nbsp;the&nbsp;topological&nbsp;path&nbsp;to&nbsp;the&nbsp;network&nbsp;node<br>
+on&nbsp;which&nbsp;that&nbsp;module&nbsp;is&nbsp;placed.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><a name="RoundRobinPartitionedSelector-get_path_from_failure"><strong>get_path_from_failure</strong></a>(self, sim, message, link, alloc_DES, alloc_module, traffic, ctime, from_des)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;call&nbsp;when&nbsp;some&nbsp;link&nbsp;of&nbsp;a&nbsp;message&nbsp;path&nbsp;is&nbsp;broken&nbsp;or&nbsp;unavailable.&nbsp;A&nbsp;new&nbsp;one&nbsp;from&nbsp;that&nbsp;point&nbsp;should&nbsp;be&nbsp;calculated.<br>
+&nbsp;<br>
+:param&nbsp;sim:<br>
+:param&nbsp;message:<br>
+:param&nbsp;link:<br>
+:param&nbsp;alloc_DES:<br>
+:param&nbsp;alloc_module:<br>
+:param&nbsp;traffic:<br>
+:param&nbsp;ctime:<br>
+:param&nbsp;from_des<br>
+:return:<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;empty&nbsp;arrays&nbsp;implies&nbsp;that&nbsp;the&nbsp;message&nbsp;will&nbsp;not&nbsp;send&nbsp;to&nbsp;the&nbsp;destination.<br>
+&nbsp;<br>
+..&nbsp;attention::&nbsp;this&nbsp;function&nbsp;is&nbsp;optional</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="yafs.selection.html#Selection">yafs.selection.Selection</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>COMMON_DEVICE_TO_PARTITION</strong> = None<br>
+<strong>COMMON_GATEWAYS</strong> = None<br>
+<strong>COMMON_PARTITION_TO_INFO</strong> = None<br>
+<strong>COMMON_PATH_CACHE</strong> = None<br>
+<strong>USE_COMMONS</strong> = True</td></tr></table>
+</body></html>

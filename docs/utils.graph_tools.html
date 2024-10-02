@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module graph_tools</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>graph_tools</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cutils%5Cgraph_tools.py">e:\projects\hadian\hopefully_final\yafs_playground\utils\graph_tools.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-convert_dag_to_dic"><strong>convert_dag_to_dic</strong></a>(dag, id)</dt><dd><tt>A&nbsp;simple&nbsp;converter&nbsp;function&nbsp;for&nbsp;the&nbsp;sake&nbsp;of&nbsp;compatibility.&nbsp;This&nbsp;function&nbsp;converts&nbsp;networkx&nbsp;DAGs&nbsp;to&nbsp;a&nbsp;YAFS&nbsp;compatible<br>
+python&nbsp;dictionary&nbsp;you&nbsp;can&nbsp;then&nbsp;save&nbsp;those&nbsp;dictionaries&nbsp;in&nbsp;a&nbsp;json&nbsp;file&nbsp;and&nbsp;use&nbsp;them&nbsp;as&nbsp;application&nbsp;definition&nbsp;in&nbsp;YAFS.</tt></dd></dl>
+ <dl><dt><a name="-convert_network_to_dic"><strong>convert_network_to_dic</strong></a>(network_graph)</dt><dd><tt>A&nbsp;simple&nbsp;converter&nbsp;function&nbsp;for&nbsp;the&nbsp;sake&nbsp;of&nbsp;compatibility.&nbsp;This&nbsp;function&nbsp;converts&nbsp;networkx&nbsp;graphs&nbsp;to&nbsp;a&nbsp;YAFS&nbsp;compatible<br>
+python&nbsp;dictionary&nbsp;you&nbsp;can&nbsp;then&nbsp;save&nbsp;those&nbsp;dictionaries&nbsp;in&nbsp;a&nbsp;json&nbsp;file&nbsp;and&nbsp;use&nbsp;them&nbsp;as&nbsp;network&nbsp;definition&nbsp;in&nbsp;YAFS.</tt></dd></dl>
+ <dl><dt><a name="-create_random_applicaton_dag"><strong>create_random_applicaton_dag</strong></a>(node_count, application_name, sinks_as_modules=True, instructions_range=(1, 500), instructions_mag=1000, RAM_range=(1000, 40000), storage_range=(1000, 40000), bytes_range=(10, 1000), seed=None, graph_seed=None) -&gt; networkx.classes.digraph.DiGraph</dt><dd><tt>Creates&nbsp;a&nbsp;random&nbsp;application&nbsp;DAG&nbsp;according&nbsp;to&nbsp;given&nbsp;specs.&nbsp;Generally&nbsp;speaking&nbsp;this&nbsp;functions&nbsp;is&nbsp;what&nbsp;you&nbsp;want&nbsp;:).<br>
+&nbsp;<br>
+Note&nbsp;1:&nbsp;DAGs&nbsp;created&nbsp;by&nbsp;this&nbsp;function&nbsp;have&nbsp;a&nbsp;gateway&nbsp;friendly&nbsp;source&nbsp;node&nbsp;meaning&nbsp;source&nbsp;node&nbsp;omits&nbsp;a&nbsp;single&nbsp;message.<br>
+Note&nbsp;2:&nbsp;If&nbsp;'sinks_as_modules'&nbsp;flag&nbsp;is&nbsp;set,&nbsp;sinks&nbsp;would&nbsp;be&nbsp;tagged&nbsp;as&nbsp;'MODULE'&nbsp;too.&nbsp;Use&nbsp;this&nbsp;if&nbsp;you&nbsp;want&nbsp;YAFS&nbsp;to&nbsp;execute<br>
+sinks&nbsp;too.</tt></dd></dl>
+ <dl><dt><a name="-create_random_applicaton_dag_with_dummy_sink"><strong>create_random_applicaton_dag_with_dummy_sink</strong></a>(node_count, application_name, instructions_range=(1, 500), instructions_mag=1000, RAM_range=(1000, 40000), storage_range=(1000, 40000), bytes_range=(10, 1000), seed=None, graph_seed=None) -&gt; networkx.classes.digraph.DiGraph</dt><dd><tt>Crates&nbsp;a&nbsp;random&nbsp;application&nbsp;graph&nbsp;with&nbsp;given&nbsp;specs.&nbsp;Applications&nbsp;created&nbsp;through&nbsp;this&nbsp;method&nbsp;have&nbsp;a&nbsp;dummy&nbsp;sink.&nbsp;A&nbsp;dummy&nbsp;sink&nbsp;is<br>
+a&nbsp;node&nbsp;that&nbsp;receives&nbsp;a&nbsp;message&nbsp;after&nbsp;completion&nbsp;of&nbsp;every&nbsp;branch&nbsp;in&nbsp;DAG.<br>
+&nbsp;<br>
+Note&nbsp;1:&nbsp;DAGs&nbsp;created&nbsp;by&nbsp;this&nbsp;function&nbsp;have&nbsp;a&nbsp;gateway&nbsp;friendly&nbsp;source&nbsp;node&nbsp;meaning&nbsp;source&nbsp;node&nbsp;omits&nbsp;a&nbsp;single&nbsp;message.<br>
+Note&nbsp;2:&nbsp;Use&nbsp;this&nbsp;function&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;simulate&nbsp;feedbacks</tt></dd></dl>
+ <dl><dt><a name="-create_random_topology_graph"><strong>create_random_topology_graph</strong></a>(node_count, minimum_edge, IPT_range=(1, 400), IPT_mag=1000000, RAM_range=(1000000, 32000000), storage_range=(1000, 40000), BW_range=(10, 1000), PR_range=(1, 5), default_packet_size=1000, seed=None, graph_seed=None) -&gt; networkx.classes.graph.Graph</dt><dd><tt>Creates&nbsp;a&nbsp;random&nbsp;network&nbsp;topology&nbsp;graph&nbsp;according&nbsp;to&nbsp;given&nbsp;specs.<br>
+&nbsp;<br>
+Note:&nbsp;This&nbsp;is&nbsp;a&nbsp;mostly&nbsp;deprecated&nbsp;function&nbsp;kept&nbsp;as&nbsp;a&nbsp;reference.</tt></dd></dl>
+ <dl><dt><a name="-draw_communities"><strong>draw_communities</strong></a>(graph: networkx.classes.graph.Graph, communities: list[list[int]])</dt><dd><tt>A&nbsp;tiny&nbsp;little&nbsp;visualiser&nbsp;you&nbsp;can&nbsp;use&nbsp;to&nbsp;visualize&nbsp;communities.&nbsp;For&nbsp;'communities'&nbsp;parameter&nbsp;use&nbsp;the&nbsp;output&nbsp;from&nbsp;built-in<br>
+partitioning&nbsp;functions&nbsp;of&nbsp;networkx.</tt></dd></dl>
+ <dl><dt><a name="-draw_communities_with_shape"><strong>draw_communities_with_shape</strong></a>(graph: networkx.classes.graph.Graph, communities: list[list[int]], path=None)</dt><dd><tt>A&nbsp;tiny&nbsp;little&nbsp;visualiser&nbsp;you&nbsp;can&nbsp;use&nbsp;to&nbsp;visualize&nbsp;communities.&nbsp;For&nbsp;'communities'&nbsp;parameter&nbsp;use&nbsp;the&nbsp;output&nbsp;from&nbsp;built-in<br>
+partitioning&nbsp;functions&nbsp;of&nbsp;networkx.</tt></dd></dl>
+</td></tr></table>
+</body></html>

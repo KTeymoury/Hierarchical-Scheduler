@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module yafsenv</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>yafsenv</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cyafsenv.py">e:\projects\hadian\hopefully_final\yafs_playground\yafsenv.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="gymnasium.html">gymnasium</a><br>
+<a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+<a href="gymnasium.spaces.html">gymnasium.spaces</a><br>
+</td><td width="25%" valign=top><a href="warnings.html">warnings</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="gymnasium.core.html#Env">gymnasium.core.Env</a>(<a href="typing.html#Generic">typing.Generic</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="yafsenv.html#YAFSEnv">YAFSEnv</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="YAFSEnv">class <strong>YAFSEnv</strong></a>(<a href="gymnasium.core.html#Env">gymnasium.core.Env</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#YAFSEnv">YAFSEnv</a>(config:&nbsp;Optional[dict]&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+Custom&nbsp;YAFS&nbsp;environment&nbsp;that&nbsp;generates&nbsp;a&nbsp;app&nbsp;to&nbsp;partition&nbsp;assignment&nbsp;map&nbsp;and&nbsp;evaluates&nbsp;it<br>
+using&nbsp;YAFS&nbsp;simulator.<br>
+&nbsp;<br>
+&nbsp;<br>
+Action&nbsp;space&nbsp;is&nbsp;an&nbsp;array&nbsp;of&nbsp;length&nbsp;&lt;PARTITION_COUNT&gt;&nbsp;denoting&nbsp;assignment&nbsp;of&nbsp;current&nbsp;app&nbsp;to<br>
+a&nbsp;partition&nbsp;with&nbsp;a&nbsp;1.<br>
+&nbsp;<br>
+Reward&nbsp;is&nbsp;dynamically&nbsp;calculated&nbsp;using&nbsp;YAFS&nbsp;simulations.&nbsp;default&nbsp;violation&nbsp;penalty&nbsp;is&nbsp;-9999.5<br>
+for&nbsp;not&nbsp;assigning&nbsp;an&nbsp;app&nbsp;to&nbsp;any&nbsp;partition&nbsp;and&nbsp;&lt;VIOLATION_PENALTY&gt;&nbsp;for&nbsp;over&nbsp;packing&nbsp;a&nbsp;partition.<br>
+&nbsp;<br>
+Number&nbsp;of&nbsp;tasks,&nbsp;and,&nbsp;partitions&nbsp;along&nbsp;with&nbsp;their&nbsp;information&nbsp;are&nbsp;passed&nbsp;to&nbsp;environment&nbsp;through<br>
+config&nbsp;dictionary.&nbsp;a&nbsp;parent_scenario&nbsp;field&nbsp;is&nbsp;also&nbsp;there&nbsp;to&nbsp;keep&nbsp;a&nbsp;reference&nbsp;of&nbsp;simulator&nbsp;interface.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="yafsenv.html#YAFSEnv">YAFSEnv</a></dd>
+<dd><a href="gymnasium.core.html#Env">gymnasium.core.Env</a></dd>
+<dd><a href="typing.html#Generic">typing.Generic</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="YAFSEnv-__init__"><strong>__init__</strong></a>(self, config: Optional[dict] = None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-reset"><strong>reset</strong></a>(self, *, seed=None, options=None)</dt><dd><tt>Resets&nbsp;the&nbsp;environment&nbsp;to&nbsp;an&nbsp;initial&nbsp;internal&nbsp;state,&nbsp;returning&nbsp;an&nbsp;initial&nbsp;observation&nbsp;and&nbsp;info.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;generates&nbsp;a&nbsp;new&nbsp;starting&nbsp;state&nbsp;often&nbsp;with&nbsp;some&nbsp;randomness&nbsp;to&nbsp;ensure&nbsp;that&nbsp;the&nbsp;agent&nbsp;explores&nbsp;the<br>
+state&nbsp;space&nbsp;and&nbsp;learns&nbsp;a&nbsp;generalised&nbsp;policy&nbsp;about&nbsp;the&nbsp;environment.&nbsp;This&nbsp;randomness&nbsp;can&nbsp;be&nbsp;controlled<br>
+with&nbsp;the&nbsp;``seed``&nbsp;parameter&nbsp;otherwise&nbsp;if&nbsp;the&nbsp;environment&nbsp;already&nbsp;has&nbsp;a&nbsp;random&nbsp;number&nbsp;generator&nbsp;and<br>
+:meth:`reset`&nbsp;is&nbsp;called&nbsp;with&nbsp;``seed=None``,&nbsp;the&nbsp;RNG&nbsp;is&nbsp;not&nbsp;reset.<br>
+&nbsp;<br>
+Therefore,&nbsp;:meth:`reset`&nbsp;should&nbsp;(in&nbsp;the&nbsp;typical&nbsp;use&nbsp;case)&nbsp;be&nbsp;called&nbsp;with&nbsp;a&nbsp;seed&nbsp;right&nbsp;after&nbsp;initialization&nbsp;and&nbsp;then&nbsp;never&nbsp;again.<br>
+&nbsp;<br>
+For&nbsp;Custom&nbsp;environments,&nbsp;the&nbsp;first&nbsp;line&nbsp;of&nbsp;:meth:`reset`&nbsp;should&nbsp;be&nbsp;``super().<a href="#YAFSEnv-reset">reset</a>(seed=seed)``&nbsp;which&nbsp;implements<br>
+the&nbsp;seeding&nbsp;correctly.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;v0.25<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;``return_info``&nbsp;parameter&nbsp;was&nbsp;removed&nbsp;and&nbsp;now&nbsp;info&nbsp;is&nbsp;expected&nbsp;to&nbsp;be&nbsp;returned.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;seed&nbsp;(optional&nbsp;int):&nbsp;The&nbsp;seed&nbsp;that&nbsp;is&nbsp;used&nbsp;to&nbsp;initialize&nbsp;the&nbsp;environment's&nbsp;PRNG&nbsp;(`np_random`).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;environment&nbsp;does&nbsp;not&nbsp;already&nbsp;have&nbsp;a&nbsp;PRNG&nbsp;and&nbsp;``seed=None``&nbsp;(the&nbsp;default&nbsp;option)&nbsp;is&nbsp;passed,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;seed&nbsp;will&nbsp;be&nbsp;chosen&nbsp;from&nbsp;some&nbsp;source&nbsp;of&nbsp;entropy&nbsp;(e.g.&nbsp;timestamp&nbsp;or&nbsp;/dev/urandom).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However,&nbsp;if&nbsp;the&nbsp;environment&nbsp;already&nbsp;has&nbsp;a&nbsp;PRNG&nbsp;and&nbsp;``seed=None``&nbsp;is&nbsp;passed,&nbsp;the&nbsp;PRNG&nbsp;will&nbsp;*not*&nbsp;be&nbsp;reset.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;pass&nbsp;an&nbsp;integer,&nbsp;the&nbsp;PRNG&nbsp;will&nbsp;be&nbsp;reset&nbsp;even&nbsp;if&nbsp;it&nbsp;already&nbsp;exists.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usually,&nbsp;you&nbsp;want&nbsp;to&nbsp;pass&nbsp;an&nbsp;integer&nbsp;*right&nbsp;after&nbsp;the&nbsp;environment&nbsp;has&nbsp;been&nbsp;initialized&nbsp;and&nbsp;then&nbsp;never&nbsp;again*.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please&nbsp;refer&nbsp;to&nbsp;the&nbsp;minimal&nbsp;example&nbsp;above&nbsp;to&nbsp;see&nbsp;this&nbsp;paradigm&nbsp;in&nbsp;action.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;options&nbsp;(optional&nbsp;dict):&nbsp;Additional&nbsp;information&nbsp;to&nbsp;specify&nbsp;how&nbsp;the&nbsp;environment&nbsp;is&nbsp;reset&nbsp;(optional,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;depending&nbsp;on&nbsp;the&nbsp;specific&nbsp;environment)<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;observation&nbsp;(ObsType):&nbsp;Observation&nbsp;of&nbsp;the&nbsp;initial&nbsp;state.&nbsp;This&nbsp;will&nbsp;be&nbsp;an&nbsp;element&nbsp;of&nbsp;:attr:`observation_space`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(typically&nbsp;a&nbsp;numpy&nbsp;array)&nbsp;and&nbsp;is&nbsp;analogous&nbsp;to&nbsp;the&nbsp;observation&nbsp;returned&nbsp;by&nbsp;:meth:`step`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;(dictionary):&nbsp;&nbsp;This&nbsp;dictionary&nbsp;contains&nbsp;auxiliary&nbsp;information&nbsp;complementing&nbsp;``observation``.&nbsp;It&nbsp;should&nbsp;be&nbsp;analogous&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;``info``&nbsp;returned&nbsp;by&nbsp;:meth:`step`.</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-step"><strong>step</strong></a>(self, action)</dt><dd><tt>Run&nbsp;one&nbsp;timestep&nbsp;of&nbsp;the&nbsp;environment's&nbsp;dynamics&nbsp;using&nbsp;the&nbsp;agent&nbsp;actions.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;end&nbsp;of&nbsp;an&nbsp;episode&nbsp;is&nbsp;reached&nbsp;(``terminated&nbsp;or&nbsp;truncated``),&nbsp;it&nbsp;is&nbsp;necessary&nbsp;to&nbsp;call&nbsp;:meth:`reset`&nbsp;to<br>
+reset&nbsp;this&nbsp;environment's&nbsp;state&nbsp;for&nbsp;the&nbsp;next&nbsp;episode.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;0.26<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;Step&nbsp;API&nbsp;was&nbsp;changed&nbsp;removing&nbsp;``done``&nbsp;in&nbsp;favor&nbsp;of&nbsp;``terminated``&nbsp;and&nbsp;``truncated``&nbsp;to&nbsp;make&nbsp;it&nbsp;clearer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;users&nbsp;when&nbsp;the&nbsp;environment&nbsp;had&nbsp;terminated&nbsp;or&nbsp;truncated&nbsp;which&nbsp;is&nbsp;critical&nbsp;for&nbsp;reinforcement&nbsp;learning<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bootstrapping&nbsp;algorithms.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;action&nbsp;(ActType):&nbsp;an&nbsp;action&nbsp;provided&nbsp;by&nbsp;the&nbsp;agent&nbsp;to&nbsp;update&nbsp;the&nbsp;environment&nbsp;state.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;observation&nbsp;(ObsType):&nbsp;An&nbsp;element&nbsp;of&nbsp;the&nbsp;environment's&nbsp;:attr:`observation_space`&nbsp;as&nbsp;the&nbsp;next&nbsp;observation&nbsp;due&nbsp;to&nbsp;the&nbsp;agent&nbsp;actions.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;example&nbsp;is&nbsp;a&nbsp;numpy&nbsp;array&nbsp;containing&nbsp;the&nbsp;positions&nbsp;and&nbsp;velocities&nbsp;of&nbsp;the&nbsp;pole&nbsp;in&nbsp;CartPole.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reward&nbsp;(SupportsFloat):&nbsp;The&nbsp;reward&nbsp;as&nbsp;a&nbsp;result&nbsp;of&nbsp;taking&nbsp;the&nbsp;action.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;terminated&nbsp;(bool):&nbsp;Whether&nbsp;the&nbsp;agent&nbsp;reaches&nbsp;the&nbsp;terminal&nbsp;state&nbsp;(as&nbsp;defined&nbsp;under&nbsp;the&nbsp;MDP&nbsp;of&nbsp;the&nbsp;task)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which&nbsp;can&nbsp;be&nbsp;positive&nbsp;or&nbsp;negative.&nbsp;An&nbsp;example&nbsp;is&nbsp;reaching&nbsp;the&nbsp;goal&nbsp;state&nbsp;or&nbsp;moving&nbsp;into&nbsp;the&nbsp;lava&nbsp;from<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Sutton&nbsp;and&nbsp;Barton,&nbsp;Gridworld.&nbsp;If&nbsp;true,&nbsp;the&nbsp;user&nbsp;needs&nbsp;to&nbsp;call&nbsp;:meth:`reset`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;truncated&nbsp;(bool):&nbsp;Whether&nbsp;the&nbsp;truncation&nbsp;condition&nbsp;outside&nbsp;the&nbsp;scope&nbsp;of&nbsp;the&nbsp;MDP&nbsp;is&nbsp;satisfied.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Typically,&nbsp;this&nbsp;is&nbsp;a&nbsp;timelimit,&nbsp;but&nbsp;could&nbsp;also&nbsp;be&nbsp;used&nbsp;to&nbsp;indicate&nbsp;an&nbsp;agent&nbsp;physically&nbsp;going&nbsp;out&nbsp;of&nbsp;bounds.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Can&nbsp;be&nbsp;used&nbsp;to&nbsp;end&nbsp;the&nbsp;episode&nbsp;prematurely&nbsp;before&nbsp;a&nbsp;terminal&nbsp;state&nbsp;is&nbsp;reached.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;true,&nbsp;the&nbsp;user&nbsp;needs&nbsp;to&nbsp;call&nbsp;:meth:`reset`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;(dict):&nbsp;Contains&nbsp;auxiliary&nbsp;diagnostic&nbsp;information&nbsp;(helpful&nbsp;for&nbsp;debugging,&nbsp;learning,&nbsp;and&nbsp;logging).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;might,&nbsp;for&nbsp;instance,&nbsp;contain:&nbsp;metrics&nbsp;that&nbsp;describe&nbsp;the&nbsp;agent's&nbsp;performance&nbsp;state,&nbsp;variables&nbsp;that&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hidden&nbsp;from&nbsp;observations,&nbsp;or&nbsp;individual&nbsp;reward&nbsp;terms&nbsp;that&nbsp;are&nbsp;combined&nbsp;to&nbsp;produce&nbsp;the&nbsp;total&nbsp;reward.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In&nbsp;OpenAI&nbsp;Gym&nbsp;&lt;v26,&nbsp;it&nbsp;contains&nbsp;"TimeLimit.truncated"&nbsp;to&nbsp;distinguish&nbsp;truncation&nbsp;and&nbsp;termination,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;however&nbsp;this&nbsp;is&nbsp;deprecated&nbsp;in&nbsp;favour&nbsp;of&nbsp;returning&nbsp;terminated&nbsp;and&nbsp;truncated&nbsp;variables.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;done&nbsp;(bool):&nbsp;(Deprecated)&nbsp;A&nbsp;boolean&nbsp;value&nbsp;for&nbsp;if&nbsp;the&nbsp;episode&nbsp;has&nbsp;ended,&nbsp;in&nbsp;which&nbsp;case&nbsp;further&nbsp;:meth:`step`&nbsp;calls&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;undefined&nbsp;results.&nbsp;This&nbsp;was&nbsp;removed&nbsp;in&nbsp;OpenAI&nbsp;Gym&nbsp;v26&nbsp;in&nbsp;favor&nbsp;of&nbsp;terminated&nbsp;and&nbsp;truncated&nbsp;attributes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;done&nbsp;signal&nbsp;may&nbsp;be&nbsp;emitted&nbsp;for&nbsp;different&nbsp;reasons:&nbsp;Maybe&nbsp;the&nbsp;task&nbsp;underlying&nbsp;the&nbsp;environment&nbsp;was&nbsp;solved&nbsp;successfully,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;certain&nbsp;timelimit&nbsp;was&nbsp;exceeded,&nbsp;or&nbsp;the&nbsp;physics&nbsp;simulation&nbsp;has&nbsp;entered&nbsp;an&nbsp;invalid&nbsp;state.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__annotations__</strong> = {}</dl>
+
+<dl><dt><strong>__parameters__</strong> = ()</dl>
+
+<hr>
+Methods inherited from <a href="gymnasium.core.html#Env">gymnasium.core.Env</a>:<br>
+<dl><dt><a name="YAFSEnv-__enter__"><strong>__enter__</strong></a>(self)</dt><dd><tt>Support&nbsp;with-statement&nbsp;for&nbsp;the&nbsp;environment.</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-__exit__"><strong>__exit__</strong></a>(self, *args: 'Any')</dt><dd><tt>Support&nbsp;with-statement&nbsp;for&nbsp;the&nbsp;environment&nbsp;and&nbsp;closes&nbsp;the&nbsp;environment.</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;string&nbsp;of&nbsp;the&nbsp;environment&nbsp;with&nbsp;:attr:`spec`&nbsp;id's&nbsp;if&nbsp;:attr:`spec.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;identifying&nbsp;the&nbsp;environment</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-close"><strong>close</strong></a>(self)</dt><dd><tt>After&nbsp;the&nbsp;user&nbsp;has&nbsp;finished&nbsp;using&nbsp;the&nbsp;environment,&nbsp;close&nbsp;contains&nbsp;the&nbsp;code&nbsp;necessary&nbsp;to&nbsp;"clean&nbsp;up"&nbsp;the&nbsp;environment.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;critical&nbsp;for&nbsp;closing&nbsp;rendering&nbsp;windows,&nbsp;database&nbsp;or&nbsp;HTTP&nbsp;connections.</tt></dd></dl>
+
+<dl><dt><a name="YAFSEnv-render"><strong>render</strong></a>(self) -&gt; 'RenderFrame | list[RenderFrame] | None'</dt><dd><tt>Compute&nbsp;the&nbsp;render&nbsp;frames&nbsp;as&nbsp;specified&nbsp;by&nbsp;:attr:`render_mode`&nbsp;during&nbsp;the&nbsp;initialization&nbsp;of&nbsp;the&nbsp;environment.<br>
+&nbsp;<br>
+The&nbsp;environment's&nbsp;:attr:`metadata`&nbsp;render&nbsp;modes&nbsp;(`env.metadata["render_modes"]`)&nbsp;should&nbsp;contain&nbsp;the&nbsp;possible<br>
+ways&nbsp;to&nbsp;implement&nbsp;the&nbsp;render&nbsp;modes.&nbsp;In&nbsp;addition,&nbsp;list&nbsp;versions&nbsp;for&nbsp;most&nbsp;render&nbsp;modes&nbsp;is&nbsp;achieved&nbsp;through<br>
+`gymnasium.make`&nbsp;which&nbsp;automatically&nbsp;applies&nbsp;a&nbsp;wrapper&nbsp;to&nbsp;collect&nbsp;rendered&nbsp;frames.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;As&nbsp;the&nbsp;:attr:`render_mode`&nbsp;is&nbsp;known&nbsp;during&nbsp;``__init__``,&nbsp;the&nbsp;objects&nbsp;used&nbsp;to&nbsp;render&nbsp;the&nbsp;environment&nbsp;state<br>
+&nbsp;&nbsp;&nbsp;&nbsp;should&nbsp;be&nbsp;initialised&nbsp;in&nbsp;``__init__``.<br>
+&nbsp;<br>
+By&nbsp;convention,&nbsp;if&nbsp;the&nbsp;:attr:`render_mode`&nbsp;is:<br>
+&nbsp;<br>
+-&nbsp;None&nbsp;(default):&nbsp;no&nbsp;render&nbsp;is&nbsp;computed.<br>
+-&nbsp;"human":&nbsp;The&nbsp;environment&nbsp;is&nbsp;continuously&nbsp;rendered&nbsp;in&nbsp;the&nbsp;current&nbsp;display&nbsp;or&nbsp;terminal,&nbsp;usually&nbsp;for&nbsp;human&nbsp;consumption.<br>
+&nbsp;&nbsp;This&nbsp;rendering&nbsp;should&nbsp;occur&nbsp;during&nbsp;:meth:`step`&nbsp;and&nbsp;:meth:`render`&nbsp;doesn't&nbsp;need&nbsp;to&nbsp;be&nbsp;called.&nbsp;Returns&nbsp;``None``.<br>
+-&nbsp;"rgb_array":&nbsp;Return&nbsp;a&nbsp;single&nbsp;frame&nbsp;representing&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;environment.<br>
+&nbsp;&nbsp;A&nbsp;frame&nbsp;is&nbsp;a&nbsp;``np.ndarray``&nbsp;with&nbsp;shape&nbsp;``(x,&nbsp;y,&nbsp;3)``&nbsp;representing&nbsp;RGB&nbsp;values&nbsp;for&nbsp;an&nbsp;x-by-y&nbsp;pixel&nbsp;image.<br>
+-&nbsp;"ansi":&nbsp;Return&nbsp;a&nbsp;strings&nbsp;(``str``)&nbsp;or&nbsp;``StringIO.StringIO``&nbsp;containing&nbsp;a&nbsp;terminal-style&nbsp;text&nbsp;representation<br>
+&nbsp;&nbsp;for&nbsp;each&nbsp;time&nbsp;step.&nbsp;The&nbsp;text&nbsp;can&nbsp;include&nbsp;newlines&nbsp;and&nbsp;ANSI&nbsp;escape&nbsp;sequences&nbsp;(e.g.&nbsp;for&nbsp;colors).<br>
+-&nbsp;"rgb_array_list"&nbsp;and&nbsp;"ansi_list":&nbsp;List&nbsp;based&nbsp;version&nbsp;of&nbsp;render&nbsp;modes&nbsp;are&nbsp;possible&nbsp;(except&nbsp;Human)&nbsp;through&nbsp;the<br>
+&nbsp;&nbsp;wrapper,&nbsp;:py:class:`gymnasium.wrappers.RenderCollection`&nbsp;that&nbsp;is&nbsp;automatically&nbsp;applied&nbsp;during&nbsp;``gymnasium.make(...,&nbsp;render_mode="rgb_array_list")``.<br>
+&nbsp;&nbsp;The&nbsp;frames&nbsp;collected&nbsp;are&nbsp;popped&nbsp;after&nbsp;:meth:`render`&nbsp;is&nbsp;called&nbsp;or&nbsp;:meth:`reset`.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Make&nbsp;sure&nbsp;that&nbsp;your&nbsp;class's&nbsp;:attr:`metadata`&nbsp;``"render_modes"``&nbsp;key&nbsp;includes&nbsp;the&nbsp;list&nbsp;of&nbsp;supported&nbsp;modes.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;0.25.0<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;render&nbsp;function&nbsp;was&nbsp;changed&nbsp;to&nbsp;no&nbsp;longer&nbsp;accept&nbsp;parameters,&nbsp;rather&nbsp;these&nbsp;parameters&nbsp;should&nbsp;be&nbsp;specified<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;environment&nbsp;initialised,&nbsp;i.e.,&nbsp;``gymnasium.make("CartPole-v1",&nbsp;render_mode="human")``</tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="gymnasium.core.html#Env">gymnasium.core.Env</a>:<br>
+<dl><dt><strong>unwrapped</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;base&nbsp;non-wrapped&nbsp;environment.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Env:&nbsp;The&nbsp;base&nbsp;non-wrapped&nbsp;:class:`gymnasium.Env`&nbsp;instance</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="gymnasium.core.html#Env">gymnasium.core.Env</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>np_random</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;environment's&nbsp;internal&nbsp;:attr:`_np_random`&nbsp;that&nbsp;if&nbsp;not&nbsp;set&nbsp;will&nbsp;initialise&nbsp;with&nbsp;a&nbsp;random&nbsp;seed.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Instances&nbsp;of&nbsp;`np.random.Generator`</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="gymnasium.core.html#Env">gymnasium.core.Env</a>:<br>
+<dl><dt><strong>__orig_bases__</strong> = (typing.Generic[~ObsType, ~ActType],)</dl>
+
+<dl><dt><strong>metadata</strong> = {'render_modes': []}</dl>
+
+<dl><dt><strong>render_mode</strong> = None</dl>
+
+<dl><dt><strong>reward_range</strong> = (-inf, inf)</dl>
+
+<dl><dt><strong>spec</strong> = None</dl>
+
+<hr>
+Class methods inherited from <a href="typing.html#Generic">typing.Generic</a>:<br>
+<dl><dt><a name="YAFSEnv-__class_getitem__"><strong>__class_getitem__</strong></a>(params)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt></dl>
+
+<dl><dt><a name="YAFSEnv-__init_subclass__"><strong>__init_subclass__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;is&nbsp;called&nbsp;when&nbsp;a&nbsp;class&nbsp;is&nbsp;subclassed.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;does&nbsp;nothing.&nbsp;It&nbsp;may&nbsp;be<br>
+overridden&nbsp;to&nbsp;extend&nbsp;subclasses.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Optional</strong> = typing.Optional</td></tr></table>
+</body></html>

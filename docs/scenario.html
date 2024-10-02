@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module scenario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>scenario</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cscenario.py">e:\projects\hadian\hopefully_final\yafs_playground\scenario.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="utils.graph_generators.html">utils.graph_generators</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+<a href="utils.selections.html">utils.selections</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+<a href="warnings.html">warnings</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="scenario.html#Scenario">Scenario</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="scenario.html#CustomEncoder">CustomEncoder</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CustomEncoder">class <strong>CustomEncoder</strong></a>(<a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CustomEncoder">CustomEncoder</a>(*,&nbsp;skipkeys=False,&nbsp;ensure_ascii=True,&nbsp;check_circular=True,&nbsp;allow_nan=True,&nbsp;sort_keys=False,&nbsp;indent=None,&nbsp;separators=None,&nbsp;default=None)<br>
+&nbsp;<br>
+A&nbsp;custom&nbsp;json&nbsp;encoder&nbsp;to&nbsp;encode&nbsp;various&nbsp;parts&nbsp;of&nbsp;<a href="#Scenario">Scenario</a>&nbsp;objects&nbsp;that&nbsp;are&nbsp;not&nbsp;supported&nbsp;by&nbsp;json&nbsp;module.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="scenario.html#CustomEncoder">CustomEncoder</a></dd>
+<dd><a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CustomEncoder-default"><strong>default</strong></a>(self, obj)</dt><dd><tt>Implement&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;subclass&nbsp;such&nbsp;that&nbsp;it&nbsp;returns<br>
+a&nbsp;serializable&nbsp;<a href="builtins.html#object">object</a>&nbsp;for&nbsp;``o``,&nbsp;or&nbsp;calls&nbsp;the&nbsp;base&nbsp;implementation<br>
+(to&nbsp;raise&nbsp;a&nbsp;``TypeError``).<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;to&nbsp;support&nbsp;arbitrary&nbsp;iterators,&nbsp;you&nbsp;could<br>
+implement&nbsp;default&nbsp;like&nbsp;this::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#CustomEncoder-default">default</a>(self,&nbsp;o):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iterable&nbsp;=&nbsp;iter(o)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;TypeError:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;list(iterable)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Let&nbsp;the&nbsp;base&nbsp;class&nbsp;default&nbsp;method&nbsp;raise&nbsp;the&nbsp;TypeError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;<a href="json.encoder.html#JSONEncoder">JSONEncoder</a>.<a href="#CustomEncoder-default">default</a>(self,&nbsp;o)</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a>:<br>
+<dl><dt><a name="CustomEncoder-__init__"><strong>__init__</strong></a>(self, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)</dt><dd><tt>Constructor&nbsp;for&nbsp;<a href="json.encoder.html#JSONEncoder">JSONEncoder</a>,&nbsp;with&nbsp;sensible&nbsp;defaults.<br>
+&nbsp;<br>
+If&nbsp;skipkeys&nbsp;is&nbsp;false,&nbsp;then&nbsp;it&nbsp;is&nbsp;a&nbsp;TypeError&nbsp;to&nbsp;attempt<br>
+encoding&nbsp;of&nbsp;keys&nbsp;that&nbsp;are&nbsp;not&nbsp;str,&nbsp;int,&nbsp;float&nbsp;or&nbsp;None.&nbsp;&nbsp;If<br>
+skipkeys&nbsp;is&nbsp;True,&nbsp;such&nbsp;items&nbsp;are&nbsp;simply&nbsp;skipped.<br>
+&nbsp;<br>
+If&nbsp;ensure_ascii&nbsp;is&nbsp;true,&nbsp;the&nbsp;output&nbsp;is&nbsp;guaranteed&nbsp;to&nbsp;be&nbsp;str<br>
+objects&nbsp;with&nbsp;all&nbsp;incoming&nbsp;non-ASCII&nbsp;characters&nbsp;escaped.&nbsp;&nbsp;If<br>
+ensure_ascii&nbsp;is&nbsp;false,&nbsp;the&nbsp;output&nbsp;can&nbsp;contain&nbsp;non-ASCII&nbsp;characters.<br>
+&nbsp;<br>
+If&nbsp;check_circular&nbsp;is&nbsp;true,&nbsp;then&nbsp;lists,&nbsp;dicts,&nbsp;and&nbsp;custom&nbsp;encoded<br>
+objects&nbsp;will&nbsp;be&nbsp;checked&nbsp;for&nbsp;circular&nbsp;references&nbsp;during&nbsp;encoding&nbsp;to<br>
+prevent&nbsp;an&nbsp;infinite&nbsp;recursion&nbsp;(which&nbsp;would&nbsp;cause&nbsp;an&nbsp;RecursionError).<br>
+Otherwise,&nbsp;no&nbsp;such&nbsp;check&nbsp;takes&nbsp;place.<br>
+&nbsp;<br>
+If&nbsp;allow_nan&nbsp;is&nbsp;true,&nbsp;then&nbsp;NaN,&nbsp;Infinity,&nbsp;and&nbsp;-Infinity&nbsp;will&nbsp;be<br>
+encoded&nbsp;as&nbsp;such.&nbsp;&nbsp;This&nbsp;behavior&nbsp;is&nbsp;not&nbsp;JSON&nbsp;specification&nbsp;compliant,<br>
+but&nbsp;is&nbsp;consistent&nbsp;with&nbsp;most&nbsp;JavaScript&nbsp;based&nbsp;encoders&nbsp;and&nbsp;decoders.<br>
+Otherwise,&nbsp;it&nbsp;will&nbsp;be&nbsp;a&nbsp;ValueError&nbsp;to&nbsp;encode&nbsp;such&nbsp;floats.<br>
+&nbsp;<br>
+If&nbsp;sort_keys&nbsp;is&nbsp;true,&nbsp;then&nbsp;the&nbsp;output&nbsp;of&nbsp;dictionaries&nbsp;will&nbsp;be<br>
+sorted&nbsp;by&nbsp;key;&nbsp;this&nbsp;is&nbsp;useful&nbsp;for&nbsp;regression&nbsp;tests&nbsp;to&nbsp;ensure<br>
+that&nbsp;JSON&nbsp;serializations&nbsp;can&nbsp;be&nbsp;compared&nbsp;on&nbsp;a&nbsp;day-to-day&nbsp;basis.<br>
+&nbsp;<br>
+If&nbsp;indent&nbsp;is&nbsp;a&nbsp;non-negative&nbsp;integer,&nbsp;then&nbsp;JSON&nbsp;array<br>
+elements&nbsp;and&nbsp;<a href="builtins.html#object">object</a>&nbsp;members&nbsp;will&nbsp;be&nbsp;pretty-printed&nbsp;with&nbsp;that<br>
+indent&nbsp;level.&nbsp;&nbsp;An&nbsp;indent&nbsp;level&nbsp;of&nbsp;0&nbsp;will&nbsp;only&nbsp;insert&nbsp;newlines.<br>
+None&nbsp;is&nbsp;the&nbsp;most&nbsp;compact&nbsp;representation.<br>
+&nbsp;<br>
+If&nbsp;specified,&nbsp;separators&nbsp;should&nbsp;be&nbsp;an&nbsp;(item_separator,&nbsp;key_separator)<br>
+tuple.&nbsp;&nbsp;The&nbsp;default&nbsp;is&nbsp;(',&nbsp;',&nbsp;':&nbsp;')&nbsp;if&nbsp;*indent*&nbsp;is&nbsp;``None``&nbsp;and<br>
+(',',&nbsp;':&nbsp;')&nbsp;otherwise.&nbsp;&nbsp;To&nbsp;get&nbsp;the&nbsp;most&nbsp;compact&nbsp;JSON&nbsp;representation,<br>
+you&nbsp;should&nbsp;specify&nbsp;(',',&nbsp;':')&nbsp;to&nbsp;eliminate&nbsp;whitespace.<br>
+&nbsp;<br>
+If&nbsp;specified,&nbsp;default&nbsp;is&nbsp;a&nbsp;function&nbsp;that&nbsp;gets&nbsp;called&nbsp;for&nbsp;objects<br>
+that&nbsp;can't&nbsp;otherwise&nbsp;be&nbsp;serialized.&nbsp;&nbsp;It&nbsp;should&nbsp;return&nbsp;a&nbsp;JSON&nbsp;encodable<br>
+version&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;raise&nbsp;a&nbsp;``TypeError``.</tt></dd></dl>
+
+<dl><dt><a name="CustomEncoder-encode"><strong>encode</strong></a>(self, o)</dt><dd><tt>Return&nbsp;a&nbsp;JSON&nbsp;string&nbsp;representation&nbsp;of&nbsp;a&nbsp;Python&nbsp;data&nbsp;structure.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;json.encoder&nbsp;import&nbsp;<a href="json.encoder.html#JSONEncoder">JSONEncoder</a><br>
+&gt;&gt;&gt;&nbsp;<a href="json.encoder.html#JSONEncoder">JSONEncoder</a>().<a href="#CustomEncoder-encode">encode</a>({"foo":&nbsp;["bar",&nbsp;"baz"]})<br>
+'{"foo":&nbsp;["bar",&nbsp;"baz"]}'</tt></dd></dl>
+
+<dl><dt><a name="CustomEncoder-iterencode"><strong>iterencode</strong></a>(self, o, _one_shot=False)</dt><dd><tt>Encode&nbsp;the&nbsp;given&nbsp;<a href="builtins.html#object">object</a>&nbsp;and&nbsp;yield&nbsp;each&nbsp;string<br>
+representation&nbsp;as&nbsp;available.<br>
+&nbsp;<br>
+For&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;chunk&nbsp;in&nbsp;<a href="json.encoder.html#JSONEncoder">JSONEncoder</a>().<a href="#CustomEncoder-iterencode">iterencode</a>(bigobject):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysocket.write(chunk)</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="json.encoder.html#JSONEncoder">json.encoder.JSONEncoder</a>:<br>
+<dl><dt><strong>item_separator</strong> = ', '</dl>
+
+<dl><dt><strong>key_separator</strong> = ': '</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Scenario">class <strong>Scenario</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Scenario">Scenario</a>(topology:&nbsp;networkx.classes.graph.Graph&nbsp;=&nbsp;None,&nbsp;apps:&nbsp;tuple[networkx.classes.digraph.DiGraph]&nbsp;=&nbsp;None,&nbsp;initialize=False)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+A&nbsp;world&nbsp;view&nbsp;class&nbsp;in&nbsp;charge&nbsp;of&nbsp;handling&nbsp;practically&nbsp;everything...&nbsp;<a href="#Scenario">Scenario</a>&nbsp;objects&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;configure<br>
+Gymnasium&nbsp;environments&nbsp;and&nbsp;create&nbsp;yafs&nbsp;simulations.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Scenario-__init__"><strong>__init__</strong></a>(self, topology: networkx.classes.graph.Graph = None, apps: tuple[networkx.classes.digraph.DiGraph] = None, initialize=False) -&gt; None</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;scenario&nbsp;using&nbsp;given&nbsp;network&nbsp;topology&nbsp;and&nbsp;application&nbsp;DAGs.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="Scenario-add_gateways"><strong>add_gateways</strong></a>(self)</dt><dd><tt>Adds&nbsp;external&nbsp;gateway&nbsp;near&nbsp;every&nbsp;partition&nbsp;to&nbsp;emulate&nbsp;users.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-evaluate_ilp_assignment"><strong>evaluate_ilp_assignment</strong></a>(self, partition_assignment: numpy.ndarray, dedicated_selector=False) -&gt; float</dt><dd><tt>Uses&nbsp;ILP&nbsp;assignment&nbsp;to&nbsp;place&nbsp;applications&nbsp;over&nbsp;physical&nbsp;devices&nbsp;inside&nbsp;designated&nbsp;partitions&nbsp;and&nbsp;evaluates&nbsp;the<br>
+placement&nbsp;using&nbsp;a&nbsp;YAFS&nbsp;simulation.&nbsp;This&nbsp;function&nbsp;returns&nbsp;the&nbsp;average&nbsp;run&nbsp;time&nbsp;of&nbsp;applications.<br>
+&nbsp;<br>
+Note:&nbsp;You&nbsp;can&nbsp;use&nbsp;this&nbsp;function&nbsp;as&nbsp;a&nbsp;reference&nbsp;for&nbsp;'how&nbsp;to&nbsp;get&nbsp;ILP&nbsp;assignment&nbsp;to&nbsp;work'.&nbsp;:)</tt></dd></dl>
+
+<dl><dt><a name="Scenario-evaluate_json_placement"><strong>evaluate_json_placement</strong></a>(self, path: str) -&gt; float</dt><dd><tt>Runs&nbsp;a&nbsp;YAFS&nbsp;simulation&nbsp;based&nbsp;on&nbsp;a&nbsp;placement&nbsp;map&nbsp;provided&nbsp;in&nbsp;a&nbsp;json&nbsp;file.&nbsp;Generally&nbsp;used&nbsp;as&nbsp;a&nbsp;compatibility&nbsp;function<br>
+for&nbsp;default&nbsp;YAFS&nbsp;stuff.<br>
+&nbsp;<br>
+Note:&nbsp;You&nbsp;can&nbsp;use&nbsp;this&nbsp;function&nbsp;as-is&nbsp;or&nbsp;as&nbsp;a&nbsp;reference&nbsp;to&nbsp;evaluate&nbsp;placement.json&nbsp;files&nbsp;created&nbsp;by&nbsp;other&nbsp;algorithms<br>
+or&nbsp;YAFS's&nbsp;default&nbsp;placement&nbsp;schemes.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-export_all"><strong>export_all</strong></a>(self, directory: str)</dt><dd><tt>Save&nbsp;the&nbsp;entire&nbsp;scenario&nbsp;to&nbsp;a&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="Scenario-export_basics"><strong>export_basics</strong></a>(self, directory: str, warn_on_gateways=True)</dt><dd><tt>Save&nbsp;basic&nbsp;information&nbsp;to&nbsp;a&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="Scenario-generate_service_assignment_map"><strong>generate_service_assignment_map</strong></a>(self, partition_assignment: numpy.ndarray, method: str = 'greedy', time_assignment=False)</dt><dd><tt>Creates&nbsp;an&nbsp;assignment&nbsp;dictionary&nbsp;based&nbsp;on&nbsp;the&nbsp;provided&nbsp;app&nbsp;to&nbsp;partition&nbsp;map&nbsp;using&nbsp;either&nbsp;'greedy'&nbsp;or&nbsp;'ilp'&nbsp;methods.<br>
+&nbsp;<br>
+Note:&nbsp;If&nbsp;you&nbsp;need&nbsp;to&nbsp;profile&nbsp;assignment&nbsp;process&nbsp;set&nbsp;the&nbsp;'time_assignment'&nbsp;flag,&nbsp;doing&nbsp;so&nbsp;will&nbsp;make&nbsp;this&nbsp;function&nbsp;<br>
+return&nbsp;a&nbsp;list&nbsp;of&nbsp;wall&nbsp;clock&nbsp;times&nbsp;along&nbsp;with&nbsp;actual&nbsp;results.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-get_obvious_clouds"><strong>get_obvious_clouds</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Scenario-import_all"><strong>import_all</strong></a>(self, directory: str)</dt><dd><tt>Import&nbsp;a&nbsp;complete&nbsp;scenario&nbsp;from&nbsp;a&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="Scenario-import_basics"><strong>import_basics</strong></a>(self, network_path: str, app_paths: list[str] = None, initialize=True) -&gt; None</dt><dd><tt>Import&nbsp;basic&nbsp;information&nbsp;from&nbsp;a&nbsp;directory</tt></dd></dl>
+
+<dl><dt><a name="Scenario-initialize_population"><strong>initialize_population</strong></a>(self, population_map=None, seed=None, number_of_messages=1, message_interval=5000, use_improved=True)</dt><dd><tt>Creates&nbsp;a&nbsp;YAFS&nbsp;compatible&nbsp;population&nbsp;<a href="builtins.html#object">object</a>&nbsp;based&nbsp;on&nbsp;'population_map'&nbsp;if&nbsp;provided,&nbsp;otherwise&nbsp;creates&nbsp;a&nbsp;random<br>
+population&nbsp;for&nbsp;testing&nbsp;purposes.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-prepare_simulation"><strong>prepare_simulation</strong></a>(self)</dt><dd><tt>Creates&nbsp;YAFS&nbsp;components&nbsp;and&nbsp;elevates&nbsp;this&nbsp;scenario&nbsp;to&nbsp;a&nbsp;simulation-ready&nbsp;state.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-remove_gateways"><strong>remove_gateways</strong></a>(self)</dt><dd><tt>Removes&nbsp;gateways&nbsp;from&nbsp;this&nbsp;scenario.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-simulate_placement"><strong>simulate_placement</strong></a>(self, placement_map: dict, output_dir: str = None, simulation_time=10000, selector=&lt;class 'utils.selections.PartitionedSelector'&gt;)</dt><dd><tt>Runs&nbsp;a&nbsp;YAFS&nbsp;simulation&nbsp;using&nbsp;the&nbsp;given&nbsp;placement&nbsp;map.&nbsp;'placement_map'&nbsp;should&nbsp;be&nbsp;compatible&nbsp;with&nbsp;MappedPlacement.<br>
+By&nbsp;default&nbsp;this&nbsp;function&nbsp;returns&nbsp;the&nbsp;average&nbsp;runtime&nbsp;of&nbsp;applications&nbsp;and&nbsp;dumps&nbsp;results&nbsp;inside&nbsp;specified&nbsp;output<br>
+directory.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-test_partition_assignment"><strong>test_partition_assignment</strong></a>(self, partition_assignment: numpy.ndarray, dedicated_selector=False) -&gt; float</dt><dd><tt>Using&nbsp;the&nbsp;greedy_placement&nbsp;function,&nbsp;places&nbsp;the&nbsp;application&nbsp;over&nbsp;physical&nbsp;devices&nbsp;based&nbsp;on&nbsp;provided&nbsp;assignment&nbsp;map,<br>
+then,&nbsp;using&nbsp;the&nbsp;generated&nbsp;placement&nbsp;map,&nbsp;runs&nbsp;a&nbsp;simulation&nbsp;in&nbsp;YAFS&nbsp;and&nbsp;returns&nbsp;the&nbsp;negated&nbsp;average&nbsp;run&nbsp;time&nbsp;of<br>
+applications&nbsp;in&nbsp;order&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;reward/penalty&nbsp;in&nbsp;RL&nbsp;algorithm.<br>
+&nbsp;<br>
+Note:&nbsp;You&nbsp;can&nbsp;use&nbsp;this&nbsp;function&nbsp;as&nbsp;a&nbsp;reference&nbsp;for&nbsp;'how&nbsp;to&nbsp;get&nbsp;greedy&nbsp;assignment&nbsp;to&nbsp;work'.&nbsp;:)</tt></dd></dl>
+
+<dl><dt><a name="Scenario-update_info"><strong>update_info</strong></a>(self)</dt><dd><tt>Given&nbsp;a&nbsp;fresh&nbsp;scenario,&nbsp;this&nbsp;function&nbsp;does&nbsp;a&nbsp;number&nbsp;of&nbsp;things:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;Extracts&nbsp;device&nbsp;informations&nbsp;from&nbsp;network&nbsp;graph.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;Partitions&nbsp;the&nbsp;network&nbsp;graph&nbsp;into&nbsp;communities&nbsp;and&nbsp;selects&nbsp;a&nbsp;center&nbsp;for&nbsp;each&nbsp;partition.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Calculates&nbsp;total&nbsp;resource&nbsp;for&nbsp;every&nbsp;partition<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;Extracts&nbsp;application&nbsp;informations&nbsp;from&nbsp;application&nbsp;DAGs&nbsp;and&nbsp;calculates&nbsp;total&nbsp;required&nbsp;resource&nbsp;by&nbsp;them.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;Creates&nbsp;an&nbsp;environment&nbsp;config&nbsp;dictionary&nbsp;for&nbsp;Gymnasium&nbsp;environment.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;Elevates&nbsp;the&nbsp;state&nbsp;of&nbsp;this&nbsp;scenario&nbsp;to&nbsp;initiated.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Scenario-load_all"><strong>load_all</strong></a>(directory)</dt><dd><tt>Fully&nbsp;loads&nbsp;an&nbsp;exported&nbsp;scenario.</tt></dd></dl>
+
+<dl><dt><a name="Scenario-load_basics"><strong>load_basics</strong></a>(directory)</dt><dd><tt>Loads&nbsp;basic&nbsp;information&nbsp;of&nbsp;an&nbsp;exported&nbsp;scenario.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>SUPPORTED_ASSIGNMENT_METHODS</strong> = {'greedy': 0, 'ilp': 1, 'ilp_improved': 2}</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-create_random_scenario"><strong>create_random_scenario</strong></a>() -&gt; scenario.Scenario</dt></dl>
+ <dl><dt><a name="-create_scenario"><strong>create_scenario</strong></a>(app_count=10, approximate_device_count=100) -&gt; scenario.Scenario</dt><dd><tt>creates&nbsp;a&nbsp;random&nbsp;scenario&nbsp;using&nbsp;graph_tools.&nbsp;Acts&nbsp;as&nbsp;a&nbsp;"how&nbsp;to"&nbsp;for&nbsp;their&nbsp;usage.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>CLOUD_LATENCY</strong> = 60<br>
+<strong>FORCE_COMMONS_FOR_SELECTORS</strong> = True<br>
+<strong>LOUVAIN_SEED</strong> = 6<br>
+<strong>LOUVAIN_THRESHOLD</strong> = 1<br>
+<strong>MAKE_COMPLETE_PATH_CACHE</strong> = False<br>
+<strong>RESOLUTION</strong> = 1.5<br>
+<strong>SHARE_PATH_CACHE</strong> = True</td></tr></table>
+</body></html>

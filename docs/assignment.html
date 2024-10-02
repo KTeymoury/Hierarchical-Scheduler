@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module assignment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>assignment</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:e%3A%5Cprojects%5Chadian%5Chopefully_final%5Cyafs_playground%5Cassignment.py">e:\projects\hadian\hopefully_final\yafs_playground\assignment.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="networkx.html">networkx</a><br>
+</td><td width="25%" valign=top><a href="ortools.linear_solver.pywraplp.html">ortools.linear_solver.pywraplp</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-greedy_placement"><strong>greedy_placement</strong></a>(partition: networkx.classes.graph.Graph, apps: list[tuple[str, int, int, tuple[str, int, int]]]) -&gt; tuple[bool, bool, dict]</dt><dd><tt>A&nbsp;simple&nbsp;and&nbsp;fast&nbsp;greedy&nbsp;placement&nbsp;technique&nbsp;used&nbsp;in&nbsp;training&nbsp;phase&nbsp;for&nbsp;faster&nbsp;execution.&nbsp;it&nbsp;receives&nbsp;applications&nbsp;in&nbsp;a<br>
+different&nbsp;format.&nbsp;please&nbsp;refer&nbsp;to&nbsp;'Scenario.py'&nbsp;for&nbsp;usage&nbsp;example.<br>
+Final&nbsp;output&nbsp;is&nbsp;a&nbsp;3-tuple&nbsp;where&nbsp;first&nbsp;two&nbsp;elements&nbsp;tell&nbsp;us&nbsp;if&nbsp;everything&nbsp;was&nbsp;placed&nbsp;and&nbsp;whether&nbsp;a&nbsp;'nice'&nbsp;solution&nbsp;was<br>
+reached&nbsp;or&nbsp;not&nbsp;and&nbsp;the&nbsp;third&nbsp;element&nbsp;is&nbsp;the&nbsp;placement&nbsp;map&nbsp;compatible&nbsp;with&nbsp;'MappedPlacement'.</tt></dd></dl>
+ <dl><dt><a name="-ilp_placement"><strong>ilp_placement</strong></a>(partition: networkx.classes.graph.Graph, apps: list[networkx.classes.digraph.DiGraph]) -&gt; tuple[bool, bool, dict]</dt><dd><tt>An&nbsp;ILP&nbsp;solution&nbsp;that&nbsp;places&nbsp;given&nbsp;applications&nbsp;on&nbsp;physical&nbsp;devices&nbsp;inside&nbsp;provided&nbsp;partition.<br>
+This&nbsp;function&nbsp;uses&nbsp;ortools&nbsp;and&nbsp;can&nbsp;take&nbsp;a&nbsp;while&nbsp;to&nbsp;finish&nbsp;executing,&nbsp;so&nbsp;please&nbsp;be&nbsp;patient.<br>
+Final&nbsp;output&nbsp;is&nbsp;a&nbsp;3-tuple&nbsp;where&nbsp;first&nbsp;two&nbsp;elements&nbsp;tell&nbsp;us&nbsp;if&nbsp;everything&nbsp;was&nbsp;placed&nbsp;and&nbsp;whether&nbsp;an&nbsp;optimal<br>
+solution&nbsp;was&nbsp;reached&nbsp;or&nbsp;not&nbsp;and&nbsp;the&nbsp;third&nbsp;element&nbsp;is&nbsp;the&nbsp;placement&nbsp;map&nbsp;compatible&nbsp;with&nbsp;'MappedPlacement'.</tt></dd></dl>
+ <dl><dt><a name="-ilp_placement_source_included"><strong>ilp_placement_source_included</strong></a>(partition: networkx.classes.graph.Graph, entry_point_id: int, apps: list[networkx.classes.digraph.DiGraph]) -&gt; tuple[bool, bool, dict]</dt><dd><tt>An&nbsp;ILP&nbsp;solution&nbsp;that&nbsp;places&nbsp;given&nbsp;applications&nbsp;on&nbsp;physical&nbsp;devices&nbsp;inside&nbsp;provided&nbsp;partition.<br>
+This&nbsp;function&nbsp;uses&nbsp;ortools&nbsp;and&nbsp;can&nbsp;take&nbsp;a&nbsp;while&nbsp;to&nbsp;finish&nbsp;executing,&nbsp;so&nbsp;please&nbsp;be&nbsp;patient.<br>
+Final&nbsp;output&nbsp;is&nbsp;a&nbsp;3-tuple&nbsp;where&nbsp;first&nbsp;two&nbsp;elements&nbsp;tell&nbsp;us&nbsp;if&nbsp;everything&nbsp;was&nbsp;placed&nbsp;and&nbsp;whether&nbsp;an&nbsp;optimal<br>
+solution&nbsp;was&nbsp;reached&nbsp;or&nbsp;not&nbsp;and&nbsp;the&nbsp;third&nbsp;element&nbsp;is&nbsp;the&nbsp;placement&nbsp;map&nbsp;compatible&nbsp;with&nbsp;'MappedPlacement'.</tt></dd></dl>
+</td></tr></table>
+</body></html>
